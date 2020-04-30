@@ -11,7 +11,7 @@ WORKDIR /opt/build
 ADD ${PAPERMC_CI_URL} paperclip.jar
 
 # Run paperclip and obtain patched jar
-RUN java -jar /opt/build/paperclip.jar; exit 0
+RUN java -Xmx500M -jar /opt/build/paperclip.jar; exit 0
 
 # Copy built jar
 RUN mv /opt/build/cache/patched*.jar papermc.jar

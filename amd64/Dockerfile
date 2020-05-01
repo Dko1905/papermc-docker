@@ -29,7 +29,7 @@ VOLUME "/data"
 EXPOSE 25565/tcp
 
 # Memory that jvm max can use
-ARG JVM_MEMORY=3G
+ARG JVM_MEMORY=1G
 ENV JVM_MEMORY=$JVM_MEMORY
 
 # Custom JVM arguments

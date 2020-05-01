@@ -24,15 +24,15 @@ Here is a docker-compose example
 ```yml
 version: '3'
 services:
-	minecraft_server:
-		restart: "no"
-		image: dako1905/papermc
-		ports:
-			- 25565:25565
-		volumes:
-			- /home/joe/paperserver/:/data:rw
-		environment:
-			- JVM_MEMORY=1G
+  minecraft_server:
+    restart: "no"
+    image: dako1905/papermc
+    ports:
+      - 25565:25565
+    volumes:
+      - /home/joe/paperserver/:/data:rw
+    environment:
+      - JVM_MEMORY=1G
 
 ```
 (I have not tested the `docker-compose.yml` file, but it should work, create an issue if it doesn't)

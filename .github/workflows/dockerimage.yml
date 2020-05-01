@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build-amd64:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the amd64 Docker image
+      run: docker build ./amd64 --file Dockerfile --tag dako1905/papermc:amd64-$(date +%s)
+  build-arm32v7:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the arm32v7 Docker image
+        run: docker build ./arm32v7 --file Dockerfile --tag dako1905/papermc:arm32v7-$(date +%s) 
